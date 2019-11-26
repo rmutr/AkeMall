@@ -1,4 +1,5 @@
 import 'package:akemall/utility/my_style.dart';
+import 'package:akemall/utility/normal_dialog.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -69,7 +70,7 @@ class _RegisterState extends State<Register> {
         hintText: 'More 6 Charactor',
         helperText: 'Please Type Your Password in Blank',
         helperStyle: TextStyle(color: color),
-        labelText: 'Plassword :',
+        labelText: 'Password :',
         labelStyle: TextStyle(color: color),
         icon: Icon(
           Icons.account_box,
@@ -97,11 +98,23 @@ class _RegisterState extends State<Register> {
         .createUserWithEmailAndPassword(email: email, password: password)
         .then((response) {
       print('Register Success');
+      setupDisplayName();
     }).catchError((response) {
       String title = response.code;
       String message = response.message;
       print('title = $title, message = $message');
+      normalDialog(context, title, message);
     });
+  }
+
+  Future<void> setupDisplayName() async {
+    FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+    FirebaseUser firebaseUser = await firebaseAuth.currentUser();
+    UserUpdateInfo userUpdateInfo = UserUpdateInfo();
+    userUpdateInfo.displayName = name;
+    firebaseUser.updateProfile(userUpdateInfo);
+
+    Navigator.of(context).pop();
   }
 
   @override
