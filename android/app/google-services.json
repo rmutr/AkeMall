@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1036639009287",
+    "firebase_url": "https://akemall.firebaseio.com",
+    "project_id": "akemall",
+    "storage_bucket": "akemall.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1036639009287:android:ec86dc0ad7262b5ac148a2",
+        "android_client_info": {
+          "package_name": "com.flutterthailand.akemall"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1036639009287-vvbv8ropuiqtn4fkfldot3fqedumqbb1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBYepjHKcUrM_JtHrMOgTtETGIKJHvymI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1036639009287-vvbv8ropuiqtn4fkfldot3fqedumqbb1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
