@@ -114,6 +114,8 @@ class _RegisterState extends State<Register> {
     userUpdateInfo.displayName = name;
     firebaseUser.updateProfile(userUpdateInfo);
 
+
+
     Navigator.of(context).pop();
   }
 
